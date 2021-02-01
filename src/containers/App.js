@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Container, Header, Divider } from 'semantic-ui-react'
 
-import Dashboard from '../components/dashboard'
+import Dashboard from '../components/Dashboard'
 
 class App extends Component {
   render() {

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import EditableTimer from './editableTimer'
+import EditableTimer from './EditableTimer'
 
 const EditableTimerList = (props) => (
     <div>

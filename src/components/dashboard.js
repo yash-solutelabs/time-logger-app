@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import { Grid } from 'semantic-ui-react'
-// import uuid from 'uuid'
 
-import EditableTimerList from './editTimer/editableTimerList'
-import ToggleTimerForm from './form/toggleTimerForm'
+
+import EditableTimerList from './editTimer/EditableTimerList'
+import ToggleTimerForm from './form/ToggleTimerForm'
 import { newTimer } from '../helpers/helpers'
 
 

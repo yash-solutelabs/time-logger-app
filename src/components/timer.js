@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { Card, Header } from 'semantic-ui-react'
 
-import TimerControlButton from './controls/timerControlButton'
-import TimerActionButton from './controls/timerActionButton'
+import TimerControlButton from './controls/TimerControlButton'
+import TimerActionButton from './controls/TimerActionButton'
 import { renderElapsedString } from '../helpers/helpers'
 
 class Timer extends Component {
@@ -61,7 +61,7 @@ class Timer extends Component {
                     />
                 </Card.Content>
                 <TimerActionButton
-                 timerIsRunning={!!this.props.runningSince} // Check karvaanu
+                 timerIsRunning={!!this.props.runningSince}
                  onStartClick={() => this.props.onStartClick(this.props.id)}
                  onStopClick={() => this.props.onStopClick(this.props.id)}
                 />

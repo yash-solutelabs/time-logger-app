@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
-import MainForm from '../form/mainForm'
-import Timer from '../timer'
+import MainForm from '../form/MainForm'
+import Timer from '../Timer'
 
 class EditableTimer extends Component {
 

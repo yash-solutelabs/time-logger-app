@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Segment, Button } from 'semantic-ui-react'
 
-import MainForm from './mainForm'
+import MainForm from './MainForm'
 
 class ToggleTimerForm extends Component {
 
