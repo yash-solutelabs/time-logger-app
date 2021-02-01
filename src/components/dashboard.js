@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
 import { Grid } from 'semantic-ui-react'
 
-
-import EditableTimerList from './editTimer/EditableTimerList'
-import ToggleTimerForm from './form/ToggleTimerForm'
+import EditFormList from './editTimer/EditFormList'
+import OpenCloseForm from './form/OpenCloseForm'
 import { newTimer } from '../helpers/helpers'
 
 
@@ -12,11 +11,19 @@ class Dashboard extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            timers: []
+            timers: [
+                // {
+                //     title: 'Practice Tennis',
+                //     project: 'Gym Chores',
+                //     id: 1,
+                //     elapsed: 5456099, // milliseconds elapsed
+                //     runningSince: Date.now()
+                // }
+            ] // If we want to make any hardcoded time log we can make it here
         }
     }
 
-    updateTimer(attrs) {
+    updateTime(attrs) {
         this.setState({
             timers: this.state.timers.map(timer => {
                 if(timer.id === attrs.id) {
@@ -31,14 +38,14 @@ class Dashboard extends Component {
         })
     }
 
-    createTimer(timer) {
+    createTime(timer) {
         const t = newTimer(timer)
         this.setState({
             timers: this.state.timers.concat(t)
         })
     }
 
-    deleteTimer(timerId) {
+    deleteTime(timerId) {
         console.log(timerId)
         let time = this.state.timers.filter(t => t.id !== timerId)
         this.setState({
@@ -48,8 +55,8 @@ class Dashboard extends Component {
         })
     }
 
-    startTimer(timerId) {
-        const time = Date.now()
+    startTime(timerId) {
+        const time = Date.now() // Number of millisec elapsed
 
         this.setState({
             timers: this.state.timers.map(timer => {
@@ -64,7 +71,7 @@ class Dashboard extends Component {
         })
     }
 
-    stopTimer(timerId) {
+    stopTime(timerId) {
         const time = Date.now()
 
         this.setState({
@@ -86,13 +93,13 @@ class Dashboard extends Component {
         return (
             <Grid centered>
                 <Grid.Column mobile={16} computer={4} tablet={8}>
-                    <EditableTimerList timers={this.state.timers}
-                     onFormSubmit={attrs => this.updateTimer(attrs)}
-                     onTrashClick={timerId => this.deleteTimer(timerId)}
-                     onStartClick={timerId => this.startTimer(timerId)}
-                     onStopClick={timerId => this.stopTimer(timerId)}
+                    <EditFormList timers={this.state.timers}
+                     onFormSubmit={attrs => this.updateTime(attrs)}
+                     onTrashClick={timerId => this.deleteTime(timerId)}
+                     onStartClick={timerId => this.startTime(timerId)}
+                     onStopClick={timerId => this.stopTime(timerId)}
                     />
-                    <ToggleTimerForm onFormSubmit={timer => this.createTimer(timer)} />
+                    <OpenCloseForm onFormSubmit={timer => this.createTime(timer)} />
                 </Grid.Column>
             </Grid>
         )

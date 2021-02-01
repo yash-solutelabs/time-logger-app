@@ -5,15 +5,17 @@ const visibleButtonStyle = {
     visibility: 'visible',
     opacity: 1,
     transition: 'opacity 0.25s ease-in'
-}
+} // Styling
 
 const hiddenButtonStyle = {
     visibility: 'hidden',
     opacity: 0,
     transition: 'opacity 0.25s ease-in'
-}
+} // Styling
 
-const TimerControlButton = (props) => {
+
+// Delete And Update Icon
+const FormControlButton = (props) => {
     return (
         <Card.Content style={
             props.showButtons ? visibleButtonStyle : hiddenButtonStyle
@@ -28,4 +30,4 @@ const TimerControlButton = (props) => {
     )
 }
 
-export default TimerControlButton
+export default FormControlButton

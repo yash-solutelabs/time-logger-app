@@ -1,6 +1,8 @@
 import React from 'react'
 import { Button } from 'semantic-ui-react'
 
+
+// Start And Stop Button
 const TimerActionButton = (props) => {
     if(props.timerIsRunning) {
         return (

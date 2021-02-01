@@ -1,12 +1,12 @@
 import React from 'react'
 
-import EditableTimer from './EditableTimer'
+import EditForm from './EditForm'
 
-const EditableTimerList = (props) => (
+const EditFormList = (props) => (
     <div>
         {
             props.timers.map(timer => (
-                <EditableTimer
+                <EditForm
                  key={timer.id} 
                  {...timer} 
                  onFormSubmit={props.onFormSubmit}
@@ -19,4 +19,4 @@ const EditableTimerList = (props) => (
     </div>
 )
 
-export default EditableTimerList
+export default EditFormList

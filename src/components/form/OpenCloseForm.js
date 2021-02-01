@@ -3,10 +3,10 @@ import { Segment, Button } from 'semantic-ui-react'
 
 import MainForm from './MainForm'
 
-class ToggleTimerForm extends Component {
+class OpenCloseForm extends Component {
 
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
 
         this.state = {
             isOpen: false
@@ -35,4 +35,4 @@ class ToggleTimerForm extends Component {
     }
 }
 
-export default ToggleTimerForm
+export default OpenCloseForm

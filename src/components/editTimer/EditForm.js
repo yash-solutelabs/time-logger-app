@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import MainForm from '../form/MainForm'
 import Timer from '../Timer'
 
-class EditableTimer extends Component {
+class EditForm extends Component {
 
     constructor() {
         super()
@@ -32,7 +32,7 @@ class EditableTimer extends Component {
                      this.props.onFormSubmit(timer)
                      this.closeForm()
                  }}
-                 onFormClose={e => this.closeForm()}
+                 onFormClose={() => this.closeForm()}
                 />
             )
         } else {
@@ -53,4 +53,4 @@ class EditableTimer extends Component {
     }
 }
 
-export default EditableTimer
+export default EditForm

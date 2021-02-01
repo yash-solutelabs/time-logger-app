@@ -1,27 +1,29 @@
 import React, { Component } from 'react'
 import { Card, Header } from 'semantic-ui-react'
 
-import TimerControlButton from './controls/TimerControlButton'
+import FormControlButton from './controls/FormControlButton'
 import TimerActionButton from './controls/TimerActionButton'
 import { renderElapsedString } from '../helpers/helpers'
 
+// Here how everything will be printed is implemented 
 class Timer extends Component {
 
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
         
         this.state = {
-            showButtons: false
+            showButtons: false // ShowButtons means Show Update And Delete Icons
         }
     }
 
     componentDidMount() {
-        this.forceUpdateInterval = setInterval(() => this.forceUpdate(), 50)
+        this.forceUpdateInterval = setInterval(() => this.forceUpdate(), 50) // Calling every 0.05 sec
+        console.log(this.forceUpdateInterval)
     }
 
     componentWillUnmount() {
-        clearInterval(this.forceUpdateInterval)
-        clearTimeout(this.showButtonsTimeout)
+        clearInterval(this.forceUpdateInterval) 
+        clearTimeout(this.showButtonsTimeout) // Clears a Timer
     }
 
     showButtons() {
@@ -46,14 +48,15 @@ class Timer extends Component {
              onMouseLeave={() => {
                  clearTimeout(this.showButtonsTimeout)
                  this.hideButtons()
-             }}>
+             }}
+            >
                 <Card.Content>
                     <Card.Header>{this.props.title}</Card.Header>
                     <Card.Meta>{this.props.project}</Card.Meta>
                     <Card.Description>
                         <Header as="h2" textAlign="center">{ elapsedString }</Header>
                     </Card.Description>
-                    <TimerControlButton
+                    <FormControlButton
                      id={this.props.id} 
                      showButtons={this.state.showButtons}
                      onTrashClick={this.props.onTrashClick}
