@@ -5,7 +5,7 @@ import FormControlButton from './controls/FormControlButton'
 import TimerActionButton from './controls/TimerActionButton'
 import { renderElapsedString } from '../helpers/helpers'
 
-// Here how everything will be printed is implemented 
+// Here how everything will be shown is implemented 
 class Timer extends Component {
 
     constructor(props) {
@@ -17,7 +17,7 @@ class Timer extends Component {
     }
 
     componentDidMount() {
-        this.forceUpdateInterval = setInterval(() => this.forceUpdate(), 50) // Calling every 0.05 sec
+        this.forceUpdateInterval = setInterval(() => this.forceUpdate(), 50) // renders only once 
         console.log(this.forceUpdateInterval)
     }
 
